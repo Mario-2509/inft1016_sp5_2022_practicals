@@ -7,6 +7,23 @@
     <title>My page title</title> 
     <link rel="stylesheet" href="stylesheet.css">
     <script>
+        function ImageChanger()
+        {
+        var img = document.getElementById("image");
+        img.src="https://www.digitalscouting.de/wp-content/uploads/2020/11/2-1024x576.png";
+        document.getElementById("Picture_details").innerHTML = "1G is the First Generation of Mobile Technology"
+        return false;
+        }   
+        function ImageChanger2(){
+        var img = document.getElementById("image");
+        img.src="https://www.malwarebytes.com/blog/images/uploads/2022/01/2g_header.png";
+        document.getElementById("Picture_details").innerHTML = "2G is the Second Generation of Mobile Technology"
+        return false;
+        }   
+        
+
+        
+         
         
     </script>
     <style>
@@ -25,14 +42,23 @@
             text-align: center; /* the text would be center alligned inside the buttonsd */
             font-size: 16px; /* The font size of the text would be 16*/
             border: none; /* The buttons would have a border*/
+        
 
+        }
+        button3 {
+            background-color: rgb(41, 41, 250); /* Blue colored buttons */
+            color: white;/* The buttons would have white text*/
+            padding: 15px 32px;
+            text-align: center; /* the text would be center alligned inside the buttonsd */
+            font-size: 16px; /* The font size of the text would be 16*/
+            border: none; /* The buttons would have a border*/
         }
     </style>
 </head>
 <body>
     <header> 
         <h1>Header</h1>
-        <button onclick="just_toggle()">Toggle theme</button>
+        <button onclick="">Toggle theme</button>
 </header>
 <nav>
     <ul> 
@@ -52,15 +78,14 @@
         <button type="submit">Apply!</button>       
     </form>     
     <div style = "text-align: center;">
-        <li><p><img src="	http://www.outgrabe.net/bird00.jpg" alt="Pardalote by fir0002 (CC-by-NC)" width="300" height="300" align="middle" hspace="20" vspace="20"></li>
-        Pardalote by fir0002 (CC-by-NC)</p>
-
+        <li><p><img id = "image" src="	http://www.outgrabe.net/bird00.jpg" alt="Pardalote by fir0002 (CC-by-NC)" width="600" height="500" align="middle" hspace="20" vspace="20"></li></p>
+        <p id="Picture_details">Pardalote by fir0002 (CC-by-NC)</p> 
         <h3>Click These Buttons to See their Corresponding Images!!!</h3> 
-        <a href="#"><button2 style="margin:5px;">1G</button2></a>
-        <a href="#"><button2 style="margin:5px;">2G</button2></a>
+        <a href="#"><button2 onclick="ImageChanger();">1G</button2></a>
+        <a href="#"><button3 onclick="ImageChanger2();">2G</button3></a>
         <a href="#"><button2 style="margin:5px;">3G</button2></a>        
         <a href="#"><button2 style="margin:5px;">4G</button2></a>
-        <a href="#"><button2 style="margin:5px;">5G</button2></a>
+        <a href="#"><button2 style="margin:5px;">5G</button2></a> 
     </div>
 </nav>    
 <main>      
