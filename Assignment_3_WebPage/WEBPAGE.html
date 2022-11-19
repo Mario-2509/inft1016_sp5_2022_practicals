@@ -96,8 +96,16 @@
             border: none; /* The buttons would have a border*/
         }
 
-
-        
+        const heading = document.querySelector('h1');
+        function updateHeading(){
+            const url = window.location.href;
+            const index = url.indexOf('=')
+            if(index != -1){
+                const user_name = url.substring(index + 1);
+                heading.innertext = 'Hello $ {user_name}';
+            }
+        }
+        document.body.onload = updateHeading();
     </style>
 </head>
 <body>
@@ -118,7 +126,8 @@
     
     
 
-    <form>         
+    <form onload = "updateHeading()"> 
+
         <input type="text" name="user_name" placeholder="Enter your name!">         
         <button type="submit">Apply!</button>       
     </form>     
