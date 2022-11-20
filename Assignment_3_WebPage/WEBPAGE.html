@@ -14,64 +14,70 @@
         document.getElementById("Picture_details").innerHTML = "1G is the First Generation of Mobile Technology"
         return false;
         }   
+
         function ImageChanger2(){
         var img = document.getElementById("image");
         img.src="https://www.malwarebytes.com/blog/images/uploads/2022/01/2g_header.png";
         document.getElementById("Picture_details").innerHTML = "2G is the Second Generation of Mobile Technology"
         return false;
         }   
+
         function ImageChanger3(){
         var img = document.getElementById("image");
         img.src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8pY9xtHpBHmLv-OZvFjNkYXnKt1vdNFZHjQ&usqp=CAU";
         document.getElementById("Picture_details").innerHTML = "3G is the Third Generation of Mobile Technology"
         return false;
         }
+
         function ImageChanger4(){
         var img = document.getElementById("image");
         img.src="https://prod-discovery.edx-cdn.org/media/course/image/7f3e3e83-66c3-4f57-b1e8-46c21cf0833e-cfa554eb1b28.small.png";
         document.getElementById("Picture_details").innerHTML = "4G is the Fourth Generation of Mobile Technology"
         return false;
         }
+
         function ImageChanger5(){
         var img = document.getElementById("image");
         img.src="https://media.kasperskydaily.com/wp-content/uploads/sites/102/2015/05/06040751/5G.png";
         document.getElementById("Picture_details").innerHTML = "5G is the prsent and future of Wireless technology"
         return false;
         }
+        
+        function toggle_theme() {
+            var element = document.body;
+            element.classList.toggle("dark-mode");
+        }
 
-
-        var storedTheme = localStorage.getItem('theme') || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
-        if (storedTheme)
-            document.documentElement.setAttribute('data-theme', 'dark')
-
-        toggle_theme = function() {
-            console.log('meet')
-            var currentTheme = document.documentElement.getAttribute("data-theme");
-            var targetTheme = "light";
-
-            if (currentTheme === "light") {
-                targetTheme = "dark";
-            }
-
-            document.documentElement.setAttribute('data-theme', targetTheme)
-            localStorage.setItem('theme', 'dark');
-        };
-
-       
-        const heading = document.querySelector('h1');
+        
+        
         function updateHeading(){
             const url = window.location.href;
             const index = url.indexOf('=')
             if(index != -1){
                 const user_name = url.substring(index + 1);
-                heading.innertext = 'Hello $ {user_name}';
+                
+                
             }
         }
         document.body.onload = updateHeading();
     </script>
     <style>
+        body {
+            padding: 25px;
+            background-color: white;
+            color: black;
+            font-size: 25px;
+        }
+
+        .dark-mode {
+            background-color: black;
+            color: white;
+        }
+        button {
+            background color: var(--bg-color)
+        }
         button1 {
-            background-color: var(--bg-color); /* Blue colored buttons */
+            background-color: rgb(41, 41, 250); /* Blue colored buttons */
             color: white;/* The buttons would have white text*/
             padding: 15px 32px;
             text-align: center; /* the text would be center alligned inside the buttons */
@@ -125,7 +131,7 @@
 </head>
 <body>
     <header> 
-        <h1 class>Header</h1>
+        <h1 id = "user_input"></h1>
         <button onclick="toggle_theme()">Toggle theme</button>
 </header>
 <nav>
@@ -139,12 +145,10 @@
               
     </ul>
     
-    
-
     <form onload = "updateHeading()"> 
 
-        <input type="text" name="user_name" placeholder="Enter your name!">         
-        <button type="submit">Apply!</button>       
+        <input id = "user_input" type="text" name="user_name" placeholder="Enter your name!" />         
+        <button  type="submit">Apply!</button>       
     </form>     
     <div style = "text-align: center;">
         <li><p><img id = "image" src="	http://www.outgrabe.net/bird00.jpg" alt="Pardalote by fir0002 (CC-by-NC)" width="600" height="500" align="middle" hspace="20" vspace="20"></li></p>
@@ -158,15 +162,14 @@
     </div>
 </nav>    
 <main>      
-    <article>        
-        <h2>Evolution from 1G to 5G</h2>        
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Donec a diam lectus. Set sit amet ipsum mauris. Maecenas congue ligula as quam viverra nec consectetur ant hendrerit. Donec et mollis dolor. Praesent et diam eget libero egestas mattis sit amet vitae augue. Nam tincidunt congue enim, ut porta lorem lacinia consectetur.</p>        
-        <h3>Subsection</h3>        
-        <p>Donec ut librero sed accu vehicula ultricies a non tortor. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aenean ut gravida lorem. Ut turpis felis, pulvinar a semper sed, adipiscing id dolor.</p>        
-        <p>Pelientesque auctor nisi id magna consequat sagittis. Curabitur dapibus, enim sit amet elit pharetra tincidunt feugiat nist imperdiet. Ut convallis libero in urna ultrices accumsan. Donec sed odio eros.</p>        
-        <h3>Another subsection</h3>        
-        <p>Donec viverra mi quis quam pulvinar at malesuada arcu rhoncus. Cum soclis natoque penatibus et manis dis parturient montes, nascetur ridiculus mus. In rutrum accumsan ultricies. Mauris vitae nisi at sem facilisis semper ac in est.</p>        
-        <p>Vivamus fermentum semper porta. Nunc diam velit, adipscing ut tristique vitae sagittis vel odio. Maecenas convallis ullamcorper ultricied. Curabitur ornare, ligula semper consectetur sagittis, nisi diam iaculis velit, is fringille sem nunc vet mi.</p>      
+    <article>  
+        <div>
+            <h2>Evolution from 1G to 5G</h2>        
+            <p></p>
+
+        </div>      
+                
+             
     </article>      
     <aside>        
         <h2>Related</h2>        
