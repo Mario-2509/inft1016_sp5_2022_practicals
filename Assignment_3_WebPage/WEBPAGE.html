@@ -47,19 +47,11 @@
             var element = document.body;
             element.classList.toggle("dark-mode");
         }
+                                      
+                   
+       
+                    
 
-        
-        
-        function updateHeading(){
-            const url = window.location.href;
-            const index = url.indexOf('=')
-            if(index != -1){
-                const user_name = url.substring(index + 1);
-                
-                
-            }
-        }
-        document.body.onload = updateHeading();
     </script>
     <style>
         body {
@@ -147,7 +139,7 @@
     
     <form onload = "updateHeading()"> 
 
-        <input id = "user_input" type="text" name="user_name" placeholder="Enter your name!" />         
+        <input id = "user_input" type="text" name="user_name" placeholder="Enter your name!" onkeyup="document.getElementById('user_input').innerHTML = this.value;"/>         
         <button  type="submit">Apply!</button>       
     </form>     
     <div style = "text-align: center;">
