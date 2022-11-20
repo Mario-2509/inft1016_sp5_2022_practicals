@@ -53,6 +53,21 @@
                     
 
     </script>
+    <script>
+        const heading = document.querySelector('h1');
+        function updateHeading() {
+            const url = window.location.href;
+            const index = url.indexOf('=');
+            if(index != -1){
+             const user_name = url.substring(index + 1);
+             heading.innertext = `Hello ${user_name}`;
+            }
+        }
+        document.body.onload = updateHeading();
+
+           
+</script>
+
     <style>
         body {
             padding: 25px;
@@ -65,9 +80,8 @@
             background-color: black;
             color: white;
         }
-        button {
-            background color: var(--bg-color)
-        }
+       
+
         button1 {
             background-color: rgb(41, 41, 250); /* Blue colored buttons */
             color: white;/* The buttons would have white text*/
